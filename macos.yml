@@ -1,6 +1,7 @@
 - hosts: macos
   roles:
-    - geerlingguy.homebrew
+    - role: elliotweiser.osx-command-line-tools
+    - role: FGtatsuro.homebrew
   tasks:
     - name: Add bash configuration for non-login shells
       copy:
@@ -15,18 +16,33 @@
         - git
         - node@6
         - ruby
+      tags:
+        - brew
     - name: Add node 6 to PATH
       lineinfile:
         path: "{{ ansible_user_dir }}/.bash_profile"
         create: yes
         state: present
         line: export PATH="$PATH:/usr/local/opt/node@6/bin"
+      tags:
+        - brew
     - name: Install common node packages
       npm:
         name: "{{ item }}"
         global: yes
+        state: present
       with_items:
+        - npm
         - cordova
         - gulp
       tags:
         - node
+    - name: Install common brew cask packages
+      homebrew_cask:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - atom
+        - java
+      tags:
+        - brew
