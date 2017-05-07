@@ -12,6 +12,7 @@
         name: "{{ item }}"
         state: present
       with_items:
+        - mas
         - vim
         - git
         - node@6
