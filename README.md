@@ -3,10 +3,13 @@ Dependencies:
 * vagrant
 * ansible
 
-Setup
+Start:
+```
+vagrant up [<machine_name>]
+```
 
-`ansible-galaxy install -r roles.yml`
-
-Setup MacOS
-
-`vagrant up macos`
+Provision:
+```
+ansible-galaxy install -r roles.yml
+ansible-playbook <playbook>
+```

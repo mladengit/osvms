@@ -16,14 +16,10 @@ Vagrant.configure('2') do |global_config|
        # Set display size
        vb.customize ['setextradata', :id, 'VBoxInternal2/EfiGopMode', '4']
     end
-
-    config.vm.provision :ansible do |ansible|
-      ansible.playbook = 'macos.yml'
-    end
   end
 
   global_config.vm.define :win do |config|
-    config.vm.box = 'mwrock/Windows2016'
+    config.vm.box = 'jacqinthebox/windowsserver2016'
 
     config.vm.provider 'virtualbox' do |vb|
        # Display the VirtualBox GUI when booting the machine
@@ -32,10 +28,6 @@ Vagrant.configure('2') do |global_config|
        # Customize the amount of memory on the VM:
        vb.memory = '2048'
     end
-
-    # config.vm.provision :ansible do |ansible|
-    #   ansible.playbook = 'win.yml'
-    # end
   end
 
   # Create a forwarded port mapping which allows access to a specific port

@@ -1,0 +1,17 @@
+- hosts: win
+  tasks:
+    # Get-WindowsFeature | Out-GridView to list Windows features
+    - name: Install common Windows Features
+      win_feature:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - Web-WebServer
+    - name: Install common chocolatey packages
+      win_chocolatey:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - googlechrome
+      tags:
+        - choco
