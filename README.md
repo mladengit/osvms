@@ -1,7 +1,10 @@
 Dependencies:
-* VirtualBox
+* VirtualBox + VirtualBox Extension Pack
 * vagrant
-* ansible
+* python2
+
+apt install libssl-dev
+pip install -r requirements.txt
 
 Start:
 ```
