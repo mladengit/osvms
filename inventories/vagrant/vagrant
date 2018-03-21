@@ -1,5 +1,5 @@
 [macos]
-127.0.0.1
+macos_host
 
 [win]
-127.0.0.1
+win_host
