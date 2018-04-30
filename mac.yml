@@ -1,4 +1,4 @@
-- hosts: macos
+- hosts: mac
   roles:
     - role: elliotweiser.osx-command-line-tools
     - role: FGtatsuro.homebrew

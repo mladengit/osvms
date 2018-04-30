@@ -1,18 +1,21 @@
 Dependencies:
+
 * VirtualBox + VirtualBox Extension Pack
 * vagrant
-* python2
+* python3
 
 apt install libssl-dev
-pip install -r requirements.txt
+pip3 install -r requirements.txt
+ansible-galaxy install -r roles.yml
 
 Start:
+
 ```
 vagrant up [<machine_name>]
 ```
 
 Provision:
+
 ```
-ansible-galaxy install -r roles.yml
 ansible-playbook <playbook>
 ```

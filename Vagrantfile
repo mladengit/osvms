@@ -3,7 +3,7 @@
 
 Vagrant.configure('2') do |global_config|
 
-  global_config.vm.define :macos do |config|
+  global_config.vm.define :mac do |config|
     config.vm.box = 'jhcook/macos-sierra'
 
     config.vm.provider 'virtualbox' do |vb|
@@ -28,6 +28,8 @@ Vagrant.configure('2') do |global_config|
        # Customize the amount of memory on the VM:
        vb.memory = '2048'
     end
+
+    config.vm.network 'public_network'
   end
 
   # Create a forwarded port mapping which allows access to a specific port

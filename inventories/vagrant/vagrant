@@ -1,5 +1,5 @@
-[macos]
-macos_host
+[mac]
+mac_host
 
 [win]
 win_host
