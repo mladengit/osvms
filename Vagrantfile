@@ -19,7 +19,7 @@ Vagrant.configure('2') do |global_config|
   end
 
   global_config.vm.define :win do |config|
-    config.vm.box = 'jacqinthebox/windowsserver2016'
+    config.vm.box = 'peru/windows-server-2019-datacenter-x64-eval'
 
     config.vm.provider 'virtualbox' do |vb|
        # Display the VirtualBox GUI when booting the machine
